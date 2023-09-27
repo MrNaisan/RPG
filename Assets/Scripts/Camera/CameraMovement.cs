@@ -35,7 +35,8 @@ public class CameraMovement : MonoBehaviour
             float mouseY = Input.GetAxis("Mouse Y") * rotationSpeed;
 
             currentRotationX += mouseX;
-            currentRotationY += mouseY;
+            if(currentRotationY + mouseY < 161 && currentRotationY + mouseY > -18)  
+                currentRotationY += mouseY;
         }
 
         Quaternion rotation = Quaternion.Euler(-currentRotationY , currentRotationX, 0);

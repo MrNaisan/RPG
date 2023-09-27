@@ -13,7 +13,7 @@ public class ShieldState : State
     
         shield = character.Shield;
         clipLength = inputSystem.ShieldAnim.length;
-        clipSpeed = 1;
+        clipSpeed = 2;
     }
 
     public override void Enter()

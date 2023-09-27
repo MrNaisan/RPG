@@ -11,6 +11,9 @@ public class UIManager : MonoBehaviour
     public Image HP;
     [HideInInspector]
     public float maxHP;
+    public Image EnemyHP;
+    public Text EnemyName;
+    public GameObject EnemyUI;
     
     private void Awake() 
     {
@@ -29,6 +32,13 @@ public class UIManager : MonoBehaviour
     public void ChangeHP(float hp)
     {
         HP.fillAmount = hp / maxHP;
+    }
+
+    public void ChangeEnemyHP(float hp, float maxHP, string name)
+    {
+        EnemyUI.SetActive(true);
+        EnemyHP.fillAmount = hp / maxHP;
+        EnemyName.text = name;
     }
 
     public void SetCDImage(int skillNum)

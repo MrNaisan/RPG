@@ -17,6 +17,8 @@ public class Enemy : MonoBehaviour
 
     [Header("Health")]
     [SerializeField] float health = 3;
+    public string Name;
+    float maxHealt;
  
     [Header("Combat")]
     public float attackCD = 3f;
@@ -69,6 +71,8 @@ public class Enemy : MonoBehaviour
         stand = new EnemyStandState(this, movementSM);
         dying = new EnemyDeathState(this, movementSM);
 
+        maxHealt = health;
+
         movementSM.Initialize(standing);
     }
  
@@ -117,6 +121,7 @@ public class Enemy : MonoBehaviour
 
         health -= damageAmount;
         DamageEffect.Play();
+        UIManager.Default.ChangeEnemyHP(health, maxHealt, Name);
  
         if (health <= 0)
         {

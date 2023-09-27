@@ -141,7 +141,7 @@ public class InputSystem : MonoBehaviour
 
     void StrafeAction()
     {
-        if(Input.GetKey(KeyCode.LeftControl))
+        if(Input.GetMouseButton(1))
         {
             Strafe = true;
         }     
