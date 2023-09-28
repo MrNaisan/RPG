@@ -14,11 +14,6 @@ public class Enemy : MonoBehaviour
     public EnemyRoarState roaring;
     public EnemyStandState stand;
     public EnemyDeathState dying;
-
-    [Header("Health")]
-    [SerializeField] float health = 3;
-    public string Name;
-    float maxHealt;
  
     [Header("Combat")]
     public float attackCD = 3f;
@@ -35,6 +30,8 @@ public class Enemy : MonoBehaviour
     public NavMeshAgent agent;
     [HideInInspector]
     public Animator animator;
+    [HideInInspector]
+    public EnemyHealthSystem healthSystem;
 
     [HideInInspector]
     public bool stun = false;
@@ -43,13 +40,10 @@ public class Enemy : MonoBehaviour
     [HideInInspector]
     public bool idle = false;
     [HideInInspector]
-    public bool isTakeDamage = true;
-    [HideInInspector]
     public bool isSkillStun = false;
 
     [Header("Effects")]
     public VisualEffect DeathEffect;
-    public VisualEffect DamageEffect;
 
     [HideInInspector]
     public float timePassedAttack;
@@ -61,6 +55,7 @@ public class Enemy : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
         player = FindObjectOfType<Character>().gameObject;
+        healthSystem = GetComponent<EnemyHealthSystem>();
 
         movementSM = new EnemyStateMachine();
         standing = new EnemyStandingState(this, movementSM);
@@ -71,9 +66,9 @@ public class Enemy : MonoBehaviour
         stand = new EnemyStandState(this, movementSM);
         dying = new EnemyDeathState(this, movementSM);
 
-        maxHealt = health;
-
         movementSM.Initialize(standing);
+
+        healthSystem.Die += Die;
     }
  
     void Update()
@@ -115,19 +110,6 @@ public class Enemy : MonoBehaviour
         idle = true;
     }
 
-    public void TakeDamage(float damageAmount)
-    {
-        if(!isTakeDamage) return;
-
-        health -= damageAmount;
-        DamageEffect.Play();
-        UIManager.Default.ChangeEnemyHP(health, maxHealt, Name);
- 
-        if (health <= 0)
-        {
-            Die();
-        }
-    }
     public void StartDealDamage(int num)
     {
         damageDealers[num].StartDealDamage();
@@ -143,5 +125,10 @@ public class Enemy : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, attackRange);
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, aggroRange);
+    }
+
+    private void OnDestroy() 
+    {
+        healthSystem.Die -= Die;    
     }
 }

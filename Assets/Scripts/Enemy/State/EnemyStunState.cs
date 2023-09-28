@@ -22,7 +22,7 @@ public class EnemyStunState : EnemyState
 
         enemy.agent.enabled = false;
         enemy.stun = false;
-        enemy.isTakeDamage = true;
+        enemy.healthSystem.isTakeDamage = true;
         
         if(enemy.isSkillStun)
             enemy.animator.SetTrigger("skillStun");

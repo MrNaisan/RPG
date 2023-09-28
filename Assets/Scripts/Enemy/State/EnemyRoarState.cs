@@ -21,7 +21,7 @@ public class EnemyRoarState : EnemyState
         stun = false;
 
         enemy.agent.enabled = false;
-        enemy.isTakeDamage = false;
+        enemy.healthSystem.isTakeDamage = false;
 
         enemy.animator.SetTrigger("roar");
     }

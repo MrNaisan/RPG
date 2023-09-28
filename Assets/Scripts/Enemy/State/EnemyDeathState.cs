@@ -23,7 +23,7 @@ public class EnemyDeathState : EnemyState
         time = 0f;
 
         enemy.agent.enabled = false;
-        enemy.isTakeDamage = false;
+        enemy.healthSystem.isTakeDamage = false;
 
         enemy.animator.SetTrigger("death");
         enemy.DeathEffect.Play();
@@ -33,11 +33,11 @@ public class EnemyDeathState : EnemyState
     {
         base.HandleInput();
 
-        if(time >= 5.15f && !off)
+        if(time >= 5 && !off)
         {
             off = true;
         }
-        else if(time >= 3.15 && !stop)
+        else if(time >= 2.8 && !stop)
         {
             stop = true;
         }

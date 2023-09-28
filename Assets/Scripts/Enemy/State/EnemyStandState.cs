@@ -21,7 +21,7 @@ public class EnemyStandState : EnemyState
         stun = false;
 
         enemy.animator.SetTrigger("stand");
-        enemy.isTakeDamage = true;
+        enemy.healthSystem.isTakeDamage = true;
     }
 
     public override void HandleInput()

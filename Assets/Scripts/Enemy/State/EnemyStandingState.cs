@@ -22,7 +22,7 @@ public class EnemyStandingState : EnemyState
 
         enemy.idle = false;
         enemy.agent.enabled = true;
-        enemy.isTakeDamage = true;
+        enemy.healthSystem.isTakeDamage = true;
 
         stun = false;
         attack = false;
@@ -77,7 +77,7 @@ public class EnemyStandingState : EnemyState
     {
         base.PhysicsUpdate();
 
-        if (newDestinationCD <= 0 && Vector3.Distance(enemy.player.transform.position, enemy.transform.position) <= enemy.aggroRange)
+        if (newDestinationCD <= 0)
         {
             newDestinationCD = 0.5f;
             enemy.agent.SetDestination(enemy.player.transform.position);

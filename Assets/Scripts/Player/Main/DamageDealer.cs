@@ -8,7 +8,7 @@ public class DamageDealer : MonoBehaviour
     List<GameObject> hasDealtDamage;
  
     [SerializeField] float weaponDamage;
-    Enemy enemy;
+    EnemyHealthSystem enemy;
     public bool isAlreadyAttack = false;
     public bool isDealStun = false;
     float damageMultiply = 1f;
@@ -30,9 +30,9 @@ public class DamageDealer : MonoBehaviour
             {
                 enemy.TakeDamage(weaponDamage * damageMultiply);
                 hasDealtDamage.Add(enemy.transform.gameObject);
-                if(isDealStun)
+                if(isDealStun && enemy.gameObject.TryGetComponent<Enemy>(out Enemy en))
                 {
-                    enemy.SetStun(true);
+                    en.SetStun(true);
                 }
             }
         }
@@ -49,13 +49,13 @@ public class DamageDealer : MonoBehaviour
  
     private void OnTriggerEnter(Collider other) 
     {
-        if(other.TryGetComponent(out Enemy enemy))
+        if(other.TryGetComponent(out EnemyHealthSystem enemy))
             this.enemy = enemy;    
     }
 
     private void OnTriggerExit(Collider other) 
     {
-        if(other.TryGetComponent(out Enemy enemy) && this.enemy == enemy)
+        if(other.TryGetComponent(out EnemyHealthSystem enemy) && this.enemy == enemy)
             this.enemy = null;   
     }
 

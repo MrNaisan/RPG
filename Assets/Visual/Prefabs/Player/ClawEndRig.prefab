@@ -1244,7 +1244,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3692661520402410803}
-  m_LocalRotation: {x: 6.3310816e-18, y: 5.8503163e-16, z: -0.010808916, w: 0.9999416}
+  m_LocalRotation: {x: 0, y: 0, z: -0.25502393, w: 0.96693474}
   m_LocalPosition: {x: -0.20934089, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1252,7 +1252,7 @@ Transform:
   - {fileID: 3207808572707255048}
   m_Father: {fileID: 2515166478910649986}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -29.55}
 --- !u!1 &3710707657439062576
 GameObject:
   m_ObjectHideFlags: 0
@@ -1472,7 +1472,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4532290212947159725}
-  m_LocalRotation: {x: -8.782952e-18, y: -5.8474364e-16, z: 0.014994941, w: 0.9998876}
+  m_LocalRotation: {x: -0.02070573, y: 0.10864623, z: -0.18606134, w: 0.9762932}
   m_LocalPosition: {x: -0.2126859, y: -4.2632563e-16, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1480,7 +1480,7 @@ Transform:
   - {fileID: 387851141618354571}
   m_Father: {fileID: 5065387560260833414}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 12.7, z: -21.58}
 --- !u!1 &4627715440424512190
 GameObject:
   m_ObjectHideFlags: 0
@@ -1717,7 +1717,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7952ddd48178a8478a5738233ef8cc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 1
+  health: 20
 --- !u!114 &5709986191025845376
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3461,7 +3461,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8187719232716349179}
-  m_LocalRotation: {x: -0.0047774217, y: -0.7070907, z: 0.0047774217, w: 0.7070907}
+  m_LocalRotation: {x: -0.40911046, y: -0.57673967, z: 0.40911046, w: 0.57673967}
   m_LocalPosition: {x: -0.0039098677, y: -0.065215684, z: -0.16721556}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3469,7 +3469,7 @@ Transform:
   - {fileID: 1164984354439369887}
   m_Father: {fileID: 353279141254542283}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 70.7}
 --- !u!1 &8257754193619355161
 GameObject:
   m_ObjectHideFlags: 0
@@ -3973,8 +3973,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 6.55, y: 1, z: 4.01}
-  m_Center: {x: 0, y: 0.27, z: -4.21}
+  m_Size: {x: 6.55, y: 1, z: 6.28}
+  m_Center: {x: 0, y: 0.27, z: -2.71}
 --- !u!114 &5709986192296447282
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4166,6 +4166,10 @@ PrefabInstance:
       value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 7316997181770913374, guid: 6e138796342f5de47be8273a53b99a75, type: 3}
+      propertyPath: m_PropertySheet.m_NamedObject.m_Array.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7316997181770913374, guid: 6e138796342f5de47be8273a53b99a75, type: 3}
       propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[7].m_Name
       value: ShieldDuration
       objectReference: {fileID: 0}
@@ -4189,6 +4193,14 @@ PrefabInstance:
       propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[8].m_Overridden
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7316997181770913374, guid: 6e138796342f5de47be8273a53b99a75, type: 3}
+      propertyPath: m_PropertySheet.m_NamedObject.m_Array.Array.data[0].m_Name
+      value: ShieldMesh
+      objectReference: {fileID: 0}
+    - target: {fileID: 7316997181770913374, guid: 6e138796342f5de47be8273a53b99a75, type: 3}
+      propertyPath: m_PropertySheet.m_NamedObject.m_Array.Array.data[0].m_Value
+      value: 
+      objectReference: {fileID: 6662988039079362782, guid: bd27c29ba1a850d43a0208e49be536ca, type: 3}
     - target: {fileID: 7316997181770913440, guid: 6e138796342f5de47be8273a53b99a75, type: 3}
       propertyPath: m_Layer
       value: 8
