@@ -27,6 +27,15 @@ public class EnemyHealthSystem : MonoBehaviour
         health -= damageAmount;
         DamageEffect.Play();
         UIManager.Default.ChangeEnemyHP(health, maxHealt, Name);
+
+        if(Name == "Golem" && SpawnDemons.Default.borderCounter <= SpawnDemons.Default.BordersNum)
+        {
+            if(health / maxHealt <= 1 - (SpawnDemons.Default.borderCounter * SpawnDemons.Default.borderStep))
+            {
+                SpawnDemons.Default.Spawn();
+                SpawnDemons.Default.borderCounter++;
+            }
+        }
  
         if (health <= 0)
         {
