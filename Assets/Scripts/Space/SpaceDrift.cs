@@ -14,7 +14,7 @@ public class SpaceDrift : MonoBehaviour
         // Отключаем гравитацию, чтобы объект дрейфовал в космосе
         rb.useGravity = false;
         // Задаем случайную начальную скорость объекту
-        //rb.velocity = Random.insideUnitSphere * driftForce;
+        rb.velocity = Random.insideUnitSphere * driftForce;
     }
 
     void Update()
