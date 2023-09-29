@@ -127,6 +127,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7459bcc63a7c29643a3fdf92232f1510, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  driftForce: 50
-  repulsionForce: 50
+  driftForce: 200
+  repulsionForce: 200
   rotationSpeed: 2
