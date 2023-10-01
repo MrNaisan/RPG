@@ -19,11 +19,14 @@ public class ShipMove : MonoBehaviour
     private float maxHp;
     private float time;
     private bool isEffectPlay = false;
+    private Animator anim;
+    private bool isDie = false;
 
     public VisualEffect SpeedEffect;
 
     private void Start() 
     {
+        anim = GetComponent<Animator>();
         maxHp = hp;
         rb = GetComponent<Rigidbody>();    
         time = speedTime;
@@ -31,6 +34,8 @@ public class ShipMove : MonoBehaviour
 
     private void Update()
     {
+        if(isDie) return;
+
         InputControl();
         Turn();
         Fly();
@@ -109,8 +114,15 @@ public class ShipMove : MonoBehaviour
             SpaceUI.Default.ChangeHp(hp, maxHp);
             if(hp <= 0)
             {
-                Destroy(gameObject);
+                isDie = true;
+                anim.SetTrigger("die");
+                SpaceUI.Default.Die();
             }
         }    
+    }
+
+    public void Die()
+    {
+        gameObject.SetActive(false);
     }
 }

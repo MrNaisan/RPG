@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SpaceUI : MonoBehaviour
 {
@@ -11,7 +12,13 @@ public class SpaceUI : MonoBehaviour
     public Image end;
     public Transform player;
     public AsteroidSpawner spawner;
+    public GameObject Tutorial;
+    public GameObject Pause;
+    public GameObject Death;
+
+    bool isStart = false;
     bool isEnd = false;
+    bool isDie = false;
 
     private void Awake() 
     {
@@ -21,11 +28,28 @@ public class SpaceUI : MonoBehaviour
     private void Start() 
     {
         hp.fillAmount = 1f;
-        speed.fillAmount = 1f;       
+        speed.fillAmount = 1f;    
+        Time.timeScale = 0f;
     }
 
     private void Update() 
     {
+        if(!isStart && Input.anyKey)
+        {
+            Tutorial.SetActive(false);
+            Time.timeScale = 1f;
+            isStart = true;
+        }
+
+        if(!isStart) return;
+
+        if(!isDie && Input.GetKeyDown(KeyCode.Escape))
+        {
+            Time.timeScale = 0f;
+            Cursor.lockState = CursorLockMode.Confined;
+            Pause.SetActive(true);
+        }
+
         if(player.position.z >= spawner.Size.z - 200f && !isEnd)
         {
             isEnd = true;
@@ -42,6 +66,41 @@ public class SpaceUI : MonoBehaviour
     {
         this.speed.fillAmount = speed / maxSpeed;
     }
+
+    public void Continue()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        Pause.SetActive(false);
+        Time.timeScale = 1f;
+    }
+
+    public void Menu()
+    {
+        SceneManager.LoadScene("Menu");
+    }
+
+    public void Restart()
+    {
+        SceneManager.LoadScene("FlyScene");
+    }
+
+    public void Die()
+    {
+        isDie = true;
+        StartCoroutine(DieCour());
+    }
+
+    IEnumerator DieCour()
+    {
+        while(end.color.a < 1)
+        {
+            end.color = new Color(0, 0, 0, end.color.a + 0.05f);
+            yield return new WaitForSeconds(0.1f);
+        }
+
+        Cursor.lockState = CursorLockMode.Confined;
+        Death.SetActive(true);
+    }
     
     IEnumerator End()
     {
@@ -52,5 +111,6 @@ public class SpaceUI : MonoBehaviour
         }
 
         player.gameObject.SetActive(false);
+        SceneManager.LoadScene("FightScene");
     }
 }

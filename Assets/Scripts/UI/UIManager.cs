@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
@@ -12,8 +13,16 @@ public class UIManager : MonoBehaviour
     [HideInInspector]
     public float maxHP;
     public Image EnemyHP;
+    public Image end;
     public Text EnemyName;
     public GameObject EnemyUI;
+    public GameObject Tutorial;
+    public GameObject Pause;
+    public GameObject Death;
+
+    bool isStart = false;
+    bool isEnd = false;
+    bool isDie = false;
     
     private void Awake() 
     {
@@ -27,6 +36,26 @@ public class UIManager : MonoBehaviour
             CDImages[i].fillAmount = 0;
             CDTexts[i].gameObject.SetActive(false);
         }    
+        Time.timeScale = 0f;
+    }
+
+    private void Update() 
+    {
+        if(!isStart && Input.anyKey)
+        {
+            Tutorial.SetActive(false);
+            Time.timeScale = 1f;
+            isStart = true;
+        }    
+
+        if(!isStart) return;
+
+        if(!isDie && Input.GetKeyDown(KeyCode.Escape))
+        {
+            Time.timeScale = 0f;
+            Cursor.lockState = CursorLockMode.Confined;
+            Pause.SetActive(true);
+        }
     }
 
     public void ChangeHP(float hp)
@@ -73,5 +102,54 @@ public class UIManager : MonoBehaviour
         CDImages[skillNum].fillAmount = 0;
     }
     
+    public void Continue()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        Pause.SetActive(false);
+        Time.timeScale = 1f;
+    }
 
+    public void Menu()
+    {
+        SceneManager.LoadScene("Menu");
+    }
+
+    public void Restart()
+    {
+        SceneManager.LoadScene("FlyScene");
+    }
+
+    public void Die()
+    {
+        isDie = true;
+        StartCoroutine(DieCour());
+    }
+
+    IEnumerator DieCour()
+    {
+        while(end.color.a < 1)
+        {
+            end.color = new Color(0, 0, 0, end.color.a + 0.05f);
+            yield return new WaitForSeconds(0.1f);
+        }
+
+        Cursor.lockState = CursorLockMode.Confined;
+        Death.SetActive(true);
+    }
+
+    public void End()
+    {
+        StartCoroutine(EndCour());
+    }
+    
+    IEnumerator EndCour()
+    {
+        while(end.color.a < 1)
+        {
+            end.color = new Color(0, 0, 0, end.color.a + 0.05f);
+            yield return new WaitForSeconds(0.1f);
+        }
+        
+        SceneManager.LoadScene("Menu");
+    }
 }
