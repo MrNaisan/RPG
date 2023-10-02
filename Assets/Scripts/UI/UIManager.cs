@@ -14,6 +14,7 @@ public class UIManager : MonoBehaviour
     public float maxHP;
     public Image EnemyHP;
     public Image end;
+    public Animator DamageEffect;
     public Text EnemyName;
     public GameObject EnemyUI;
     public GameObject Tutorial;
@@ -52,9 +53,9 @@ public class UIManager : MonoBehaviour
 
         if(!isDie && Input.GetKeyDown(KeyCode.Escape))
         {
-            Time.timeScale = 0f;
             Cursor.lockState = CursorLockMode.Confined;
             Pause.SetActive(true);
+            Time.timeScale = 0f;
         }
     }
 
@@ -101,21 +102,30 @@ public class UIManager : MonoBehaviour
         CDTexts[skillNum].gameObject.SetActive(false);
         CDImages[skillNum].fillAmount = 0;
     }
+
+    public void Damage()
+    {
+        DamageEffect.SetTrigger("damage");
+    }
     
     public void Continue()
     {
+        Time.timeScale = 1f;
         Cursor.lockState = CursorLockMode.Locked;
         Pause.SetActive(false);
-        Time.timeScale = 1f;
     }
 
     public void Menu()
     {
+        Time.timeScale = 1f;
+        Cursor.lockState = CursorLockMode.Confined;
         SceneManager.LoadScene("Menu");
     }
 
     public void Restart()
     {
+        Time.timeScale = 1f;
+        Cursor.lockState = CursorLockMode.Locked;
         SceneManager.LoadScene("FlyScene");
     }
 
@@ -150,6 +160,8 @@ public class UIManager : MonoBehaviour
             yield return new WaitForSeconds(0.1f);
         }
         
+        Time.timeScale = 1f;
+        Cursor.lockState = CursorLockMode.Confined;
         SceneManager.LoadScene("Menu");
     }
 }

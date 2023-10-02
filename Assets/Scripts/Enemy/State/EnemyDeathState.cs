@@ -56,6 +56,7 @@ public class EnemyDeathState : EnemyState
         if(off)
         {
             enemy.gameObject.SetActive(false);
+            UIManager.Default.End();
         }
     }
 }

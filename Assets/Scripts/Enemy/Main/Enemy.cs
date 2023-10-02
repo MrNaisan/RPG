@@ -129,7 +129,6 @@ public class Enemy : MonoBehaviour
 
     private void OnDestroy() 
     {
-        UIManager.Default.End();
         healthSystem.Die -= Die;    
     }
 }

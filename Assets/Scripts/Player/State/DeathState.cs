@@ -50,6 +50,7 @@ public class DeathState : State
         }
         if(off)
         {
+            UIManager.Default.Die();
             character.gameObject.SetActive(false);
         }
     }

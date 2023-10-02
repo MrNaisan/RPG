@@ -45,9 +45,9 @@ public class SpaceUI : MonoBehaviour
 
         if(!isDie && Input.GetKeyDown(KeyCode.Escape))
         {
-            Time.timeScale = 0f;
             Cursor.lockState = CursorLockMode.Confined;
             Pause.SetActive(true);
+            Time.timeScale = 0f;
         }
 
         if(player.position.z >= spawner.Size.z - 200f && !isEnd)
@@ -69,18 +69,22 @@ public class SpaceUI : MonoBehaviour
 
     public void Continue()
     {
+        Time.timeScale = 1f;
         Cursor.lockState = CursorLockMode.Locked;
         Pause.SetActive(false);
-        Time.timeScale = 1f;
     }
 
     public void Menu()
     {
+        Time.timeScale = 1f;
+        Cursor.lockState = CursorLockMode.Confined;
         SceneManager.LoadScene("Menu");
     }
 
     public void Restart()
     {
+        Time.timeScale = 1f;
+        Cursor.lockState = CursorLockMode.Locked;
         SceneManager.LoadScene("FlyScene");
     }
 
@@ -111,6 +115,8 @@ public class SpaceUI : MonoBehaviour
         }
 
         player.gameObject.SetActive(false);
+        Time.timeScale = 1f;
+        Cursor.lockState = CursorLockMode.Locked;
         SceneManager.LoadScene("FightScene");
     }
 }
