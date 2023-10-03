@@ -15,9 +15,12 @@ public class Sounds : MonoBehaviour
 
     private void Start() 
     {
-        SoundHolder.Default.PlayFromSoundPack($"BackGround", true, LocationNum);    
+        if(PlayerPrefs.GetInt("BackGroundSound") == 1)
+            SoundHolder.Default.PlayFromSoundPack($"BackGround", true, LocationNum);    
         if(LocationNum == 0)
         {
+            if(PlayerPrefs.GetInt("SoundEffects") != 1) return;
+
             shipMove = SoundHolder.Default.PlayFromSoundPack("ShipMove", true);
             shipMove.volume = 0f;
             accelerator = SoundHolder.Default.PlayFromSoundPack("Accelerator", true);
@@ -27,6 +30,8 @@ public class Sounds : MonoBehaviour
 
     public void Accelerator(bool isOn = true)
     {
+        if(PlayerPrefs.GetInt("SoundEffects") != 1) return;
+
         if(acceleratorCour != null)
             StopCoroutine(acceleratorCour);
         if(isOn)
@@ -37,11 +42,13 @@ public class Sounds : MonoBehaviour
 
     public void ShipDamage()
     {
-        SoundHolder.Default.PlayFromSoundPack("ShipDamage", false);
+        Play("ShipDamage");
     }
 
     public void ShipMove(bool isOn = true)
     {
+        if(PlayerPrefs.GetInt("SoundEffects") != 1) return;
+
         if(moveCour != null)
             StopCoroutine(moveCour);
         if(isOn)
@@ -74,57 +81,63 @@ public class Sounds : MonoBehaviour
 
     public void PlayerAttack()
     {
-        SoundHolder.Default.PlayFromSoundPack("SwordAttack", false);
+        Play("SwordAttack");
     }
 
     public void PlayerDamage()
     {
-        SoundHolder.Default.PlayFromSoundPack("PlayerDamage", false);
+        Play("PlayerDamage");
     }
 
     public void GolemDamage()
     {
-        SoundHolder.Default.PlayFromSoundPack("GolemDamage", false);
+        Play("GolemDamage");
     }
 
     public void DemonDamage()
     {
-        SoundHolder.Default.PlayFromSoundPack("DemonDamage", false);
+        Play("DemonDamage");
     }
 
     public void Buff()
     {
-        SoundHolder.Default.PlayFromSoundPack("Buff", false);
+        Play("Buff");
     }
 
     public void Bullet()
     {
-        SoundHolder.Default.PlayFromSoundPack("Bullet", false);
+        Play("Bullet");
     }
 
     public void Shield()
     {
-        SoundHolder.Default.PlayFromSoundPack("Shield", false);
+        Play("Shield");
     }
 
     public void GolemRoar()
     {
-        SoundHolder.Default.PlayFromSoundPack("GolemRoar", false);
+        Play("GolemRoar");
     }
 
     public void GolemRun()
     {
-        SoundHolder.Default.PlayFromSoundPack("GolemRun", false);
+        Play("GolemRun");
     }
 
     public void DemonsSpawn()
     {
-        SoundHolder.Default.PlayFromSoundPack("DemonsSpawn", false);
+        Play("DemonsSpawn");
     }
 
     public void GroundSlash()
     {
-        SoundHolder.Default.PlayFromSoundPack("Ground", false);
-        SoundHolder.Default.PlayFromSoundPack("GroundSlash", false);
+        Play("Ground");
+        Play("GroundSlash");
+    }
+
+    void Play(string name)
+    {
+        if(PlayerPrefs.GetInt("SoundEffects") == 1)
+            SoundHolder.Default.PlayFromSoundPack(name, false);
     }
 }
