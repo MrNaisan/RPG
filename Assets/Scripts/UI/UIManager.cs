@@ -125,7 +125,7 @@ public class UIManager : MonoBehaviour
     {
         Time.timeScale = 1f;
         Cursor.lockState = CursorLockMode.Locked;
-        SceneManager.LoadScene("FlyScene");
+        SceneManager.LoadScene("FightScene");
     }
 
     public void Die()

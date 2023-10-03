@@ -39,7 +39,7 @@ public class SoundHolder : DataHolder
         SoundPack pack = soundPacks.Find((p) => p.key == packName);
 
         if (pack == null || pack.sounds.Count <= 0) return null;
-        SoundOption sound = pack.sounds[UnityEngine.Random.Range(0, pack.sounds.Count)];
+        SoundOption sound = pack.sounds[num];
         if (!sound.clip) return null;
 
         return SpawnSoundSource(sound.clip, sound.volume, isLoop);

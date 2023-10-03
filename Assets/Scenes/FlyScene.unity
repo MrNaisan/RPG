@@ -1730,9 +1730,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 5
   turnSpeed: 25
-  flySpeed: 100
+  flySpeed: 75
   speedTime: 3
-  speedMultuply: 4
+  speedMultuply: 3
   SpeedEffect: {fileID: 1874659027}
 --- !u!65 &1248255759
 BoxCollider:
