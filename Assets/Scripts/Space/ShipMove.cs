@@ -21,6 +21,7 @@ public class ShipMove : MonoBehaviour
     private bool isEffectPlay = false;
     private Animator anim;
     private bool isDie = false;
+    private bool isFly = false;
 
     public VisualEffect SpeedEffect;
 
@@ -50,6 +51,17 @@ public class ShipMove : MonoBehaviour
 
     void Fly()
     {
+        if(flyInput != 0 && !isFly)
+        {
+            isFly = true;
+            Sounds.Default.ShipMove();
+        }
+        else if(flyInput == 0 && isFly)
+        {
+            isFly = false;
+            Sounds.Default.ShipMove(false);
+        }
+
         Vector3 flyForceVector = transform.forward * flyInput * flySpeed * (flyInput > 0 && isSpeedActivate ? speedMultuply : 1);
 
         rb.AddForce(flyForceVector, ForceMode.Force);
@@ -58,12 +70,12 @@ public class ShipMove : MonoBehaviour
     void InputControl()
     {
         rotationInput = new Vector3(
-            Input.GetKey(KeyCode.LeftControl) ? 1 : Input.GetKey(KeyCode.LeftShift) ? -1 : 0,
+            Input.GetKey(KeyCode.S) ? 1 : Input.GetKey(KeyCode.W) ? -1 : 0,
             Input.GetKey(KeyCode.D) ? 1 : Input.GetKey(KeyCode.A) ? -1 : 0,
             Input.GetKey(KeyCode.Q) ? 1 : Input.GetKey(KeyCode.E) ? -1 : 0
         );
 
-        flyInput = Input.GetKey(KeyCode.W) ? 1 : Input.GetKey(KeyCode.S) ? -1 : 0; 
+        flyInput = Input.GetKey(KeyCode.LeftShift) ? 1 : Input.GetKey(KeyCode.LeftControl) ? -1 : 0; 
     }
 
     void Speed()
@@ -76,6 +88,7 @@ public class ShipMove : MonoBehaviour
             if(!isEffectPlay)
             {
                 isEffectPlay = true;
+                Sounds.Default.Accelerator();
                 SpeedEffect.Play();
             }
         }
@@ -84,6 +97,7 @@ public class ShipMove : MonoBehaviour
             if(isEffectPlay)
             {
                 isEffectPlay = false;
+                Sounds.Default.Accelerator(false);
                 SpeedEffect.Stop();
             }
 
@@ -111,7 +125,11 @@ public class ShipMove : MonoBehaviour
         if(other.gameObject.TryGetComponent<SpaceDrift>(out _))
         {
             hp--;
+
             SpaceUI.Default.ChangeHp(hp, maxHp);
+            SpaceUI.Default.Damage();
+
+            Sounds.Default.ShipDamage();
             if(hp <= 0)
             {
                 isDie = true;

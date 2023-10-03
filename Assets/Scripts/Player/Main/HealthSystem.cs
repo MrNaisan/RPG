@@ -44,8 +44,10 @@ public class HealthSystem : MonoBehaviour
 
         health -= damageAmount;
         animator.SetTrigger("damage");
+
         UIManager.Default.Damage();
         UIManager.Default.ChangeHP(health);
+        Sounds.Default.PlayerDamage();
  
         if (health <= 0)
         {

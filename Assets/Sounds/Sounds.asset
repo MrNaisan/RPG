@@ -1,0 +1,81 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d23acb71ecd49254cbfcbc071d535b6b, type: 3}
+  m_Name: Sounds
+  m_EditorClassIdentifier: 
+  soundPacks:
+  - key: BackGround
+    sounds:
+    - clip: {fileID: 8300000, guid: 48e54a2c77d8a81488e3b76c2df4b41f, type: 3}
+      volume: 0.5
+    - clip: {fileID: 8300000, guid: 05d29acc584658f49a968bea816fca8e, type: 3}
+      volume: 0.5
+  - key: ShipDamage
+    sounds:
+    - clip: {fileID: 8300000, guid: c8432e379c41fa044aeda94e5e787e96, type: 3}
+      volume: 1
+  - key: Accelerator
+    sounds:
+    - clip: {fileID: 8300000, guid: ab2a23ae895215e4b900a715481f06d7, type: 3}
+      volume: 1
+  - key: ShipMove
+    sounds:
+    - clip: {fileID: 8300000, guid: f468d3244ec9ad445a21fdf069fde40c, type: 3}
+      volume: 1
+  - key: DemonDamage
+    sounds:
+    - clip: {fileID: 8300000, guid: 9eb0d8e1765803e43b88db0013fcb819, type: 3}
+      volume: 1
+  - key: GolemDamage
+    sounds:
+    - clip: {fileID: 8300000, guid: 8587369732e3f2441bd6cd44cfcf9407, type: 3}
+      volume: 1
+  - key: SwordAttack
+    sounds:
+    - clip: {fileID: 8300000, guid: 9d0d6bb0a37449049a7b289b75665f2c, type: 3}
+      volume: 1
+  - key: PlayerDamage
+    sounds:
+    - clip: {fileID: 8300000, guid: 81e763bbf88bf69448e2c44e41bc0e9b, type: 3}
+      volume: 0.5
+  - key: Buff
+    sounds:
+    - clip: {fileID: 8300000, guid: 09f657c5ecd5653488846670c2d15c56, type: 3}
+      volume: 1
+  - key: Bullet
+    sounds:
+    - clip: {fileID: 8300000, guid: f69a60baace6d454a9263961c6d1c3f2, type: 3}
+      volume: 1
+  - key: Shield
+    sounds:
+    - clip: {fileID: 8300000, guid: ca48965c9ddcf5b4ca5eecd280782c2b, type: 3}
+      volume: 1
+  - key: GolemRoar
+    sounds:
+    - clip: {fileID: 8300000, guid: 71f0bbd84c848b1438f50a3826ac8c9f, type: 3}
+      volume: 1
+  - key: GolemRun
+    sounds:
+    - clip: {fileID: 8300000, guid: 11d4d637e745b914a8aa6886555b8187, type: 3}
+      volume: 1
+  - key: DemonsSpawn
+    sounds:
+    - clip: {fileID: 8300000, guid: dc2a822e03f44b3418b14b4e946c11cc, type: 3}
+      volume: 1
+  - key: GroundSlash
+    sounds:
+    - clip: {fileID: 8300000, guid: 125f406ef285bff4bad9ddc2ce70c3f9, type: 3}
+      volume: 1
+  - key: Ground
+    sounds:
+    - clip: {fileID: 8300000, guid: 50a8d83d204f2534484871ea5f5d32e0, type: 3}
+      volume: 1

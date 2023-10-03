@@ -23,6 +23,8 @@ public class BuffState : State
         character.isBuffAvailable = false;
         character.animator.SetTrigger("buff");
         character.Buff.Play();
+
+        Sounds.Default.Buff();
         UIManager.Default.SetCDImage(1);
     }
 

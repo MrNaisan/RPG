@@ -10,6 +10,7 @@ public class SpaceUI : MonoBehaviour
     public Image hp;
     public Image speed;
     public Image end;
+    public Animator DamageEffect;
     public Transform player;
     public AsteroidSpawner spawner;
     public GameObject Tutorial;
@@ -118,5 +119,10 @@ public class SpaceUI : MonoBehaviour
         Time.timeScale = 1f;
         Cursor.lockState = CursorLockMode.Locked;
         SceneManager.LoadScene("FightScene");
+    }
+
+    public void Damage()
+    {
+        DamageEffect.SetTrigger("damage");
     }
 }

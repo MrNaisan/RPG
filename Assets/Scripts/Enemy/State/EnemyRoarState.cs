@@ -22,7 +22,7 @@ public class EnemyRoarState : EnemyState
 
         enemy.agent.enabled = false;
         enemy.healthSystem.isTakeDamage = false;
-
+        Sounds.Default.GolemRoar();
         enemy.animator.SetTrigger("roar");
     }
 

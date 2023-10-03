@@ -23,6 +23,7 @@ public class SlashState : State
         inputSystem.Attack = false;
         character.isSlashAvailable = false;
         character.animator.SetTrigger("slash");
+        Sounds.Default.PlayerAttack();
         UIManager.Default.SetCDImage(4);
     }
 

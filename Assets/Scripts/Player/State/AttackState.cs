@@ -33,10 +33,14 @@ public class AttackState : State
             {
                 character.attackNum++;
                 character.animator.SetTrigger("attack");
+                Sounds.Default.PlayerAttack();
             }
         }
         else
+        {
             character.animator.SetTrigger("attack");
+            Sounds.Default.PlayerAttack();
+        }
         
         character.animator.SetFloat("speed", 0, character.speedDampTime, Time.deltaTime);
     }

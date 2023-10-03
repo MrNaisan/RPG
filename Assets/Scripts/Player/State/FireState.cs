@@ -25,6 +25,7 @@ public class FireState : State
         ShootProjectile();
         character.StartCoroutine(FireCD());
         character.animator.SetTrigger("bullet");
+        Sounds.Default.Bullet();
         stateMachine.ChangeState(character.combatting);
     }
 

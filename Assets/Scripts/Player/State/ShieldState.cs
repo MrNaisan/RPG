@@ -40,6 +40,7 @@ public class ShieldState : State
 
     public void Shield()
     {
+        Sounds.Default.Shield();
         character.StartCoroutine(ShieldCour());
     }
 

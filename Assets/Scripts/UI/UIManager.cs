@@ -22,7 +22,6 @@ public class UIManager : MonoBehaviour
     public GameObject Death;
 
     bool isStart = false;
-    bool isEnd = false;
     bool isDie = false;
     
     private void Awake() 

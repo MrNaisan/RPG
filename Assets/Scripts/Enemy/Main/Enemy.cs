@@ -131,4 +131,9 @@ public class Enemy : MonoBehaviour
     {
         healthSystem.Die -= Die;    
     }
+
+    public void Step()
+    {
+        Sounds.Default.GolemRun();
+    }
 }

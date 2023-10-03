@@ -179,6 +179,7 @@ public class Character : MonoBehaviour
 
     public void GroundSlash()
     {
+        Sounds.Default.GroundSlash();
         groundSlashing.Slash();
     }
 
