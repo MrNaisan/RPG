@@ -6831,10 +6831,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: SK_Golem
       objectReference: {fileID: 0}
-    - target: {fileID: 5321520298626709169, guid: 86503a6774e12cd4aac5c908b0d304ff, type: 3}
-      propertyPath: aggroRange
-      value: 15
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 86503a6774e12cd4aac5c908b0d304ff, type: 3}
 --- !u!1001 &5709986191962878570
@@ -6844,9 +6840,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 303857010, guid: 69a3a15b06fcf07428e561a77e1a969f, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 730239219619646032, guid: 69a3a15b06fcf07428e561a77e1a969f, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4898961889510689253, guid: 69a3a15b06fcf07428e561a77e1a969f, type: 3}
       propertyPath: m_Name
       value: ClawEndRig
+      objectReference: {fileID: 0}
+    - target: {fileID: 4898961889510689253, guid: 69a3a15b06fcf07428e561a77e1a969f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5239739487210591071, guid: 69a3a15b06fcf07428e561a77e1a969f, type: 3}
       propertyPath: m_RootOrder
@@ -6892,7 +6900,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5709986191025845379, guid: 69a3a15b06fcf07428e561a77e1a969f, type: 3}
+    - target: {fileID: 5709986191053022100, guid: 69a3a15b06fcf07428e561a77e1a969f, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5709986191459614698, guid: 69a3a15b06fcf07428e561a77e1a969f, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5709986191983809411, guid: 69a3a15b06fcf07428e561a77e1a969f, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}

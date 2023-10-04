@@ -853,7 +853,7 @@ MonoBehaviour:
   attackRange: 4
   runAttackCD: 10
   runAttackTime: 1.5
-  aggroRange: 10
+  aggroRange: 15
   StunTime: 5
   damageDealers:
   - {fileID: 5321520298104444994}
