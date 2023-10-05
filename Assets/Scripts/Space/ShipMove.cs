@@ -25,8 +25,8 @@ public class ShipMove : MonoBehaviour
 
     public VisualEffect SpeedEffect;
     public VisualEffect MoveEffect;
-    float particleSpeedStandart = 3f;
-    float particleSpeedAccelerator = 9f;
+    float particleSpeedStandart = 6f;
+    float particleSpeedAccelerator = 15f;
 
     private void Start() 
     {

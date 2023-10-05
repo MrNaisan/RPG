@@ -1207,7 +1207,10 @@ VisualEffect:
   m_ResourceVersion: 1
   m_PropertySheet:
     m_Float:
-      m_Array: []
+      m_Array:
+      - m_Value: 6
+        m_Name: Speed
+        m_Overridden: 1
     m_Vector2f:
       m_Array: []
     m_Vector3f:
@@ -2640,9 +2643,9 @@ MonoBehaviour:
   - {fileID: 2752303617100588749, guid: c09cf6807a287634f98139824cfcb2c9, type: 3}
   - {fileID: 6627245118561266400, guid: dbd0478a3de07484aa65a61542168413, type: 3}
   - {fileID: 8281051878241977508, guid: a8a38dc45e5d6c44d8edbfae717cbf38, type: 3}
-  AsteroidsCount: 1000
+  AsteroidsCount: 250
   Size: {x: 500, y: 500, z: 5000}
-  AsteroidsScale: {x: 1, y: 3}
+  AsteroidsScale: {x: 3, y: 10}
 --- !u!4 &1752859073
 Transform:
   m_ObjectHideFlags: 0
