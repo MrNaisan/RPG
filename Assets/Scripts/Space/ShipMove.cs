@@ -24,6 +24,9 @@ public class ShipMove : MonoBehaviour
     private bool isFly = false;
 
     public VisualEffect SpeedEffect;
+    public VisualEffect MoveEffect;
+    float particleSpeedStandart = 3f;
+    float particleSpeedAccelerator = 9f;
 
     private void Start() 
     {
@@ -55,11 +58,16 @@ public class ShipMove : MonoBehaviour
         {
             isFly = true;
             Sounds.Default.ShipMove();
+            if(flyInput > 0)
+                MoveEffect.Play();
+            else
+                MoveEffect.Stop();
         }
         else if(flyInput == 0 && isFly)
         {
             isFly = false;
             Sounds.Default.ShipMove(false);
+            MoveEffect.Stop();
         }
 
         Vector3 flyForceVector = transform.forward * flyInput * flySpeed * (flyInput > 0 && isSpeedActivate ? speedMultuply : 1);
@@ -87,6 +95,7 @@ public class ShipMove : MonoBehaviour
             SpaceUI.Default.ChangeSpeed(time, speedTime);
             if(!isEffectPlay)
             {
+                MoveEffect.SetFloat("Speed", particleSpeedAccelerator);
                 isEffectPlay = true;
                 Sounds.Default.Accelerator();
                 SpeedEffect.Play();
@@ -96,6 +105,7 @@ public class ShipMove : MonoBehaviour
         {
             if(isEffectPlay)
             {
+                MoveEffect.SetFloat("Speed", particleSpeedStandart);
                 isEffectPlay = false;
                 Sounds.Default.Accelerator(false);
                 SpeedEffect.Stop();

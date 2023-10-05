@@ -7,6 +7,7 @@ public class AsteroidSpawner : MonoBehaviour
     public GameObject[] AsteroidPrefabs;
     public int AsteroidsCount;
     public Vector3 Size;
+    public Vector2 AsteroidsScale;
 
     void Start()
     {
@@ -45,7 +46,8 @@ public class AsteroidSpawner : MonoBehaviour
             float posY = Random.Range(0, 2) == 0 ? Random.Range(0, Size.y / 2) : Random.Range(-Size.y / 2, 0);
             float posZ = Random.Range(1, Size.z);
 
-            Instantiate(AsteroidPrefabs[Random.Range(0, AsteroidPrefabs.Length)], new Vector3(posX, posY, posZ), Quaternion.identity, asteroids);
+            var asteroid = Instantiate(AsteroidPrefabs[Random.Range(0, AsteroidPrefabs.Length)], new Vector3(posX, posY, posZ), Quaternion.identity, asteroids);
+            asteroid.transform.localScale *= Random.Range(AsteroidsScale.x, AsteroidsScale.y);
         }
     }
 }
