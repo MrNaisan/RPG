@@ -49,11 +49,11 @@ MonoBehaviour:
       volume: 0.5
   - key: Buff
     sounds:
-    - clip: {fileID: 8300000, guid: 09f657c5ecd5653488846670c2d15c56, type: 3}
+    - clip: {fileID: 8300000, guid: c15a041abcaf9e94bb48c248358f323d, type: 3}
       volume: 1
   - key: Bullet
     sounds:
-    - clip: {fileID: 8300000, guid: f69a60baace6d454a9263961c6d1c3f2, type: 3}
+    - clip: {fileID: 8300000, guid: 574ace14c37aa3441827a9b44d901c3a, type: 3}
       volume: 1
   - key: Shield
     sounds:
