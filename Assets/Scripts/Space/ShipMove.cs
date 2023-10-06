@@ -25,8 +25,10 @@ public class ShipMove : MonoBehaviour
 
     public VisualEffect SpeedEffect;
     public VisualEffect MoveEffect;
-    float particleSpeedStandart = 6f;
-    float particleSpeedAccelerator = 15f;
+    float particleSpeedStandart = 20f;
+    float particleSpeedAccelerator = 50f;
+
+    public CameraShake cameraShake;
 
     private void Start() 
     {
@@ -95,6 +97,7 @@ public class ShipMove : MonoBehaviour
             SpaceUI.Default.ChangeSpeed(time, speedTime);
             if(!isEffectPlay)
             {
+                cameraShake.StartShake(true);
                 MoveEffect.SetFloat("Speed", particleSpeedAccelerator);
                 isEffectPlay = true;
                 Sounds.Default.Accelerator();
@@ -109,6 +112,7 @@ public class ShipMove : MonoBehaviour
                 isEffectPlay = false;
                 Sounds.Default.Accelerator(false);
                 SpeedEffect.Stop();
+                cameraShake.StartShake(false);
             }
 
             isSpeedActivate = false;

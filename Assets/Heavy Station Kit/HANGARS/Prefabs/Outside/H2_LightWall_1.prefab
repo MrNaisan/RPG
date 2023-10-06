@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3302332}
   - component: {fileID: 2390454}
   - component: {fileID: 6503184}
+  - component: {fileID: -4154224231912967089}
   m_Layer: 0
   m_Name: H2_LightWall_1
   m_TagString: Untagged
@@ -98,6 +99,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.740189, y: 10.039781, z: 2.2175398}
   m_Center: {x: 0.3700943, y: 4.752893, z: 0}
+--- !u!114 &-4154224231912967089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 101440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abb8c86bb2cc3f043a5aa898cff6124e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1282901332975614
 GameObject:
   m_ObjectHideFlags: 0

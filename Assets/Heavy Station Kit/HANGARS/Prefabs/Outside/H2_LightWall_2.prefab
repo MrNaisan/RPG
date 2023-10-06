@@ -96,6 +96,7 @@ GameObject:
   - component: {fileID: 2331016}
   - component: {fileID: 11428182}
   - component: {fileID: 6520046}
+  - component: {fileID: 70575039998412470}
   m_Layer: 0
   m_Name: H2_LightWall_2
   m_TagString: Untagged
@@ -147,7 +148,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: cfc71e1e59014ec49b725ef333505bd6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -176,7 +177,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 185442}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a719b31b13442db4ebda245328a32d88, type: 3}
   m_Name: 
@@ -203,3 +204,15 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.3028305, y: 8.495935, z: 8.632079}
   m_Center: {x: 0.5399878, y: 4.5615263, z: -0.000059127808}
+--- !u!114 &70575039998412470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 185442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abb8c86bb2cc3f043a5aa898cff6124e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

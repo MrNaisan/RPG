@@ -935,6 +935,7 @@ GameObject:
   - component: {fileID: 849789444}
   - component: {fileID: 849789443}
   - component: {fileID: 849789446}
+  - component: {fileID: 849789447}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -974,7 +975,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 10000
+  far clip plane: 15000
   field of view: 60
   orthographic: 0
   orthographic size: 5
@@ -1042,6 +1043,22 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
+--- !u!114 &849789447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 849789442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcb1e985850dc7a4098afc29d4415c34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraTransform: {fileID: 849789445}
+  shakeDuration: 0
+  shakeAmount: 0.1
+  decreaseFactor: 1
 --- !u!1 &859883037
 GameObject:
   m_ObjectHideFlags: 0
@@ -1143,8 +1160,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 919480493}
-  m_LocalRotation: {x: 1, y: 0, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: 6.2}
+  m_LocalRotation: {x: 1, y: -0, z: -0, w: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 6.200001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1208,7 +1225,7 @@ VisualEffect:
   m_PropertySheet:
     m_Float:
       m_Array:
-      - m_Value: 6
+      - m_Value: 20
         m_Name: Speed
         m_Overridden: 1
     m_Vector2f:
@@ -1849,6 +1866,7 @@ MonoBehaviour:
   speedMultuply: 3
   SpeedEffect: {fileID: 1874659027}
   MoveEffect: {fileID: 919480496}
+  cameraShake: {fileID: 849789447}
 --- !u!65 &1248255759
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2557,7 +2575,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1619757062}
   m_LocalRotation: {x: 0.3445483, y: 0.19457869, z: -0.16380918, w: 0.90365493}
-  m_LocalPosition: {x: 0, y: 0, z: 6548}
+  m_LocalPosition: {x: 0, y: 0, z: 11548}
   m_LocalScale: {x: 500, y: 500, z: 500}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -2643,8 +2661,8 @@ MonoBehaviour:
   - {fileID: 2752303617100588749, guid: c09cf6807a287634f98139824cfcb2c9, type: 3}
   - {fileID: 6627245118561266400, guid: dbd0478a3de07484aa65a61542168413, type: 3}
   - {fileID: 8281051878241977508, guid: a8a38dc45e5d6c44d8edbfae717cbf38, type: 3}
-  AsteroidsCount: 250
-  Size: {x: 500, y: 500, z: 5000}
+  AsteroidsCount: 1000
+  Size: {x: 1000, y: 1000, z: 10000}
   AsteroidsScale: {x: 3, y: 10}
 --- !u!4 &1752859073
 Transform:
