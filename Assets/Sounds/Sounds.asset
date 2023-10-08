@@ -25,11 +25,11 @@ MonoBehaviour:
       volume: 1
   - key: Accelerator
     sounds:
-    - clip: {fileID: 8300000, guid: ab2a23ae895215e4b900a715481f06d7, type: 3}
+    - clip: {fileID: 8300000, guid: 21baa33fd92259345baf97212629b201, type: 3}
       volume: 1
   - key: ShipMove
     sounds:
-    - clip: {fileID: 8300000, guid: f468d3244ec9ad445a21fdf069fde40c, type: 3}
+    - clip: {fileID: 8300000, guid: 1c0c4a9d5518c804ca4603d266a69b3a, type: 3}
       volume: 1
   - key: DemonDamage
     sounds:
@@ -49,7 +49,7 @@ MonoBehaviour:
       volume: 0.5
   - key: Buff
     sounds:
-    - clip: {fileID: 8300000, guid: c15a041abcaf9e94bb48c248358f323d, type: 3}
+    - clip: {fileID: 8300000, guid: 6004619032e4175419594329fc65c14a, type: 3}
       volume: 1
   - key: Bullet
     sounds:

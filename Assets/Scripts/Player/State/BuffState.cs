@@ -24,7 +24,6 @@ public class BuffState : State
         character.animator.SetTrigger("buff");
         character.Buff.Play();
 
-        Sounds.Default.Buff();
         UIManager.Default.SetCDImage(1);
     }
 

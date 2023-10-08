@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a719b31b13442db4ebda245328a32d88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  materialTotalFrames: 16
+  materialTotalFrames: 0
   activeSequence: 0
   sequences:
   - totalFrames: 4
@@ -130,7 +130,6 @@ GameObject:
   - component: {fileID: 442030}
   - component: {fileID: 3391380}
   - component: {fileID: 6574346}
-  - component: {fileID: 11411788}
   m_Layer: 0
   m_Name: Console_Trigger
   m_TagString: Untagged
@@ -174,22 +173,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &11411788
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 138372}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 082741b4d16d2c54b8a204b756cc2869, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gate2: {fileID: 11448140}
-  openTip: {fileID: 2800000, guid: af923d4525b928145a8ad87c4d9e7255, type: 3}
-  closeTip: {fileID: 2800000, guid: 3d8e649ed2a9fa44ea3aca5cc21a8276, type: 3}
-  AnimatedTextureScript: {fileID: 11437658}
 --- !u!1 &143912
 GameObject:
   m_ObjectHideFlags: 0
@@ -201,7 +184,6 @@ GameObject:
   - component: {fileID: 409654}
   - component: {fileID: 3304084}
   - component: {fileID: 6527610}
-  - component: {fileID: 11417280}
   m_Layer: 0
   m_Name: Console_Trigger
   m_TagString: Untagged
@@ -245,22 +227,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &11417280
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 143912}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 082741b4d16d2c54b8a204b756cc2869, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gate2: {fileID: 11448140}
-  openTip: {fileID: 2800000, guid: af923d4525b928145a8ad87c4d9e7255, type: 3}
-  closeTip: {fileID: 2800000, guid: 3d8e649ed2a9fa44ea3aca5cc21a8276, type: 3}
-  AnimatedTextureScript: {fileID: 11455240}
 --- !u!1 &150566
 GameObject:
   m_ObjectHideFlags: 0
@@ -273,8 +239,6 @@ GameObject:
   - component: {fileID: 3361658}
   - component: {fileID: 2380138}
   - component: {fileID: 6533248}
-  - component: {fileID: 11421712}
-  - component: {fileID: 11439402}
   m_Layer: 0
   m_Name: Gate2
   m_TagString: Untagged
@@ -360,44 +324,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.2614576, y: 4.4728284, z: 6.562863}
   m_Center: {x: 0, y: 2.201134, z: 0}
---- !u!114 &11421712
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 150566}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60e1c2d86c003c941b27d2722c5134b1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  doorFlaps:
-  - openPos: {x: 0, y: 3.82, z: 0}
-    closedPos: {x: 0, y: 0, z: 0}
-    almostOpenPos: {x: 0, y: 2.12, z: 0}
-    almostClosedPos: {x: 0, y: 1.05, z: 0}
-    flap: {fileID: 421566}
-  motionTime: 2
-  doorEvents: {fileID: 11439402}
-  curPos: 0
---- !u!114 &11439402
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 150566}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ed4358caf34c884184b7862106a3b1e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  door: {fileID: 11421712}
-  audioSource: {fileID: 0}
-  closeSound: {fileID: 8300000, guid: 5749ce0d122d0f3478129f10cfdc8ebf, type: 3}
-  openSound: {fileID: 8300000, guid: 0394bcdbdc75e724e911bb6147399263, type: 3}
-  blockedSound: {fileID: 8300000, guid: c872539e989924245be2b6872e907d0a, type: 3}
 --- !u!1 &160144
 GameObject:
   m_ObjectHideFlags: 0
@@ -496,7 +422,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a719b31b13442db4ebda245328a32d88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  materialTotalFrames: 16
+  materialTotalFrames: 0
   activeSequence: 0
   sequences:
   - totalFrames: 4
@@ -720,7 +646,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 477092}
-  - component: {fileID: 11448140}
   m_Layer: 0
   m_Name: H2_Gate2
   m_TagString: Untagged
@@ -746,17 +671,3 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &11448140
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 184868}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b064b34aa46af343acb123805864cc4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mode: 1
-  doorScript: {fileID: 11421712}

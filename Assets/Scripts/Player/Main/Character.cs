@@ -183,6 +183,11 @@ public class Character : MonoBehaviour
         groundSlashing.Slash();
     }
 
+    public void BuffSound()
+    {
+        Sounds.Default.Buff();
+    }
+
     public void SlashAttack()
     {
         Slash.Play();

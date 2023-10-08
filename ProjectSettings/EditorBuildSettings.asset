@@ -13,5 +13,5 @@ EditorBuildSettings:
     guid: a5b1bd79968e89f45b59f2cf505642e5
   - enabled: 1
     path: Assets/Scenes/FightScene.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
+    guid: a4eaeeaadbf31e6428d29d12abd0521a
   m_configObjects: {}

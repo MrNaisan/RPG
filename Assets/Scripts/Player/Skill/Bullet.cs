@@ -40,7 +40,6 @@ public class Bullet : MonoBehaviour
         if(objectsToErode != null)
             StartCoroutine(ErodeObjects());
 
-        Destroy(gameObject, destroyDelay);
     }
 
     private void FixedUpdate() 
@@ -120,5 +119,6 @@ public class Bullet : MonoBehaviour
                 }
             }
         }
+        Destroy(gameObject);
     }
 }
