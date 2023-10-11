@@ -38,7 +38,7 @@ public class ShipMove : MonoBehaviour
         time = speedTime;
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         if(isDie) return;
 
